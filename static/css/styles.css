@@ -1,6 +1,19 @@
 .heading{
     padding-left: 1%;
 }
+
+.full-height {
+    position: relative;
+    display: flex;
+    height: 10%;
+    width: 136.5%;
+    background: blue;
+    font-family: 'Courier New', Courier, monospace;
+    color: aliceblue;
+}
+.body{
+    margin-left: 1%;
+}
                 
 .container {
     position: relative;
