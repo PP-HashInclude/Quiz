@@ -1,49 +1,111 @@
 <html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <Head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-        <h1>Welcome to #-Include</h1>
+        <div class="full-height">
+            <h1 style="margin-left: 1%;"><b>Welcome to #Include Quiz System</b></h1>           
+        </div>
+        <hr>
+        <style>
+            .full-height {
+                position: relative;
+                display: flex;
+                height: 10%;
+                width: 136.5%;
+                background: blue;
+                font-family: 'Courier New', Courier, monospace;
+                color: aliceblue;
+            }
+            .body{
+                padding-left: 1%;
+            }
+        </style>
         <title>
             # Include Quiz Systems
         </title>
     </Head>
-    <body>
-        <p><h2>Your Association: SSVYM</h2></p>
-        <div>
-            <div style = "clear:both;">
-                <fieldset class="tableView">
-                    <div class="row">
-                        <div class="column">
-                            Competition Name: <strong>Lock-Down - 2020</strong>
+    <body">
+        <p><h2 style="padding-left: 1%;">{{ welcome }}</h2></p>
+        <div style="padding-left: 1%;">
+            <div>
+                <div style = "clear:both;">
+                    <fieldset class="tableView">
+                        <div class="row">
+                            <div class="column">
+                                Competition Name: <strong>Lock-Down - 2020</strong>
+                            </div>
+                            <div class="column">
+                                Last Date: <strong>5PM IST, 14-APRIL-2020</strong>
+                            </div>
+                            <div class="column">
+                                Total Participants: <strong>4</strong>
+                            </div>
+                            <div class="column">
+                                Leader: <strong>PP</strong>
+                                Score: <strong>100</strong>
+                            </div>
                         </div>
-                        <div class="column">
-                            Last Date: <strong>5PM IST, 14-APRIL-2020</strong>
+                        <div class="row">
+                            <div class="column">
+                                My Registration: <strong>PVP</strong>
+                            </div>
+                            <div class="column">
+                                My Score: <strong>5PM IST, 14-APRIL-2020</strong>
+                            </div>
+                            <div class="column">
+                                My Position: <strong>4</strong>
+                            </div>
                         </div>
+                    </fieldset>
+                </div>
+            </div>
+                <div style="padding-left: 1%;">      
                         <div class="column">
                             Total Participants: <strong>4</strong>
                         </div>
                         <div class="column">
-                            Leader: <strong>PP</strong>
-                            Score: <strong>100</strong>
+                            Leader, Score: <strong>PP, 100</strong>
                         </div>
-                    </div>
                     <div class="row">
                         <div class="column">
                             My Registration: <strong>PVP</strong>
                         </div>
                         <div class="column">
-                            My Score: <strong>5PM IST, 14-APRIL-2020</strong>
+                            My Score: <strong>1</strong>
+                        </div>
+                        <div class="column">
+                            Registered On: <strong>3:27PM, 25-APRIL-2020</strong>
                         </div>
                         <div class="column">
                             My Position: <strong>4</strong>
                         </div>
                     </div>
-                </fieldset>
-                <p style="color:rgb(2, 206, 2)">{{ success }}</p>
-            </div>        <p>Current Quiz Question</p>
+                </div>
+            </div>
+            </div>
+            <div style="padding-left: 1%;">
+                <p>
+                    <h3>Current Quiz Question</h3></p>
+                <p>
+                    <strong>Ch1-1: What is Corona Virus?</strong>
+                </p>
+                <p>
+                    <input type="radio" id="opt1" name="ch1-1" value="china">
+                    <label for="male">It is a Virus from China</label><br>
+                    <input type="radio" id="opt2" name="ch1-1" value="sneeze">
+                    <label for="female">It is Virus that spreads when anyone sneezes</label><br>
+                    <input type="radio" id="opt3" name="ch1-1" value="bacteria">
+                    <label for="other">It is a type of Bacteria</label><br>
+                    <input type="radio" id="opt4" name="ch1-1" value="dontknow">
+                    <label for="other">I don't know</label>
+                    <br>
+                    <br>
+                    <input type="submit" id="submit" value="Submit" class="btn btn-primary">
+                </p>
+            </div>
         </div>
-=======
+        <p style="color: rgb(0, 180, 0);">{{ success }}</p>              
                     <div class="column">
                         Total Participants: <strong>4</strong>
                     </div>
