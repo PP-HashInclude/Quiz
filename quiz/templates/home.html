@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2 align="center">#Include Quiz-Home</h2>
+  <form class="modal-content" method="post" id="frmHome">
+      <label for="competition"><b>Select Competition</b></label>
+      <select name="selCompetition" id="selCompetition">               
+          {% for item in dbrows %}
+              <option value="{{ item[0] }}">{{item[0]}}</option>                    
+          {% endfor %}
+      </select>
+      <br>
+      <div id="divSignup">
+        <button type="button" name="btnSignup" id="btnSignUp" value="Signup" onclick="setDefaultDataAndSubmit('signup')" class="btn btn-primary">Signup</button>
+        
+        <br>
+        Already signed..<button type="button" name="btnLogin" id="btnLogin" value="Login" onclick="setDefaultDataAndSubmit('login')" class="btn btn-primary">Login</button> 
+      </div>
+      <div id="divQuiz" style="display: none;">
+          <input type="submit" name="btnQuiz" id="btQuiz" value="Quiz" class="btn btn-primary">
+      </div>            
+      <br>
+      <br>
+      <label style="color: red;">
+          {{ success }}
+      </label>
+  </form>
+  <script>
+    function setDefaultDataAndSubmit(action) {
+      var competition = document.getElementById("selCompetition").value;
+      
+      if (action === 'signup') {
+        document.getElementById("frmHome").action = "{{ url_for('signup') }}";
+      }
+      else if (action === 'login') {
+        document.getElementById("frmHome").action = "{{ url_for('login') }}";
+      }
+      document.getElementById("frmHome").action += "?competition=" + competition
+      
+      document.getElementById("frmHome").submit();
+    }
+</script>
+
+{% endblock %}
